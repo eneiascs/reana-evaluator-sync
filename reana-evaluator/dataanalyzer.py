@@ -14,14 +14,24 @@ NORMALITY_TEST = normaltest
 
 def descriptive_analysis(all_stats, path_placer=lambda path: path):
     for criterion in ['features', 'configurations']:
+        
         plot_aggregate_barplots(all_stats, "analysis_time", "Analysis time (ms)", criterion, path_placer, plot_infinity=False, limit_padding=1.2, log=True)
         plot_aggregate_barplots(all_stats, "memory", "Peak memory (MB)", criterion, path_placer, plot_infinity=False, log=False)
         plot_aggregate_boxplots(all_stats, "analysis_time", "Analysis time (ms)", criterion, path_placer, plot_infinity=False, limit_padding=1.2, log=True, minimum=0.1)
         plot_aggregate_boxplots(all_stats, "memory", "Peak memory (MB)", criterion, path_placer, plot_infinity=False, log=False)
-
+        plot_aggregate_barplots(all_stats, "elapsed_model_checking_time", "Model checking time (ms)", criterion, path_placer, plot_infinity=False, log=False)
+        plot_aggregate_barplots(all_stats, "elapsed_expression_solving_time", "Expression solving time (ms)", criterion, path_placer, plot_infinity=False, log=False)
+        plot_aggregate_barplots(all_stats, "elapsed_model_checking_time", "Model checking time (ms)", criterion, path_placer, plot_infinity=False, log=True)
+        plot_aggregate_barplots(all_stats, "elapsed_expression_solving_time", "Expression solving time (ms)", criterion, path_placer, plot_infinity=False, log=True)
+        
+       
+        
         plot_aggregate(all_stats, "analysis_time", "Analysis time (ms)", criterion, path_placer, plot_infinity=False, limit_padding=1.6)
         plot_aggregate(all_stats, "total_time", "Total time (ms)", criterion, path_placer, plot_infinity=False, limit_padding=1.6)
         plot_aggregate(all_stats, "memory", "Peak memory (MB)", criterion, path_placer, plot_infinity=False, log=False)
+        plot_aggregate(all_stats, "elapsed_model_checking_time", "Model checking time (ms)", criterion, path_placer, plot_infinity=False, log=False)
+
+        
 
     props = ["analysis_time",
              "memory"]
@@ -74,7 +84,7 @@ def test_hypotheses(all_stats):
                                      stat_name)
             aggregated_details[spl] = details
         pprint.pprint(aggregated_details, indent=2)
-
+       
 
 def _test_spl_stat(spl, stats_by_strategy, stat_name):
     samples_by_strategy = {strategy: stats_to_list(stat_name, stat_list)

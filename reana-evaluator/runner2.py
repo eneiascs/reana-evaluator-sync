@@ -3,13 +3,12 @@ import os
 import re
 import simplejson as json
 import subprocess
-import replay
 
 from configurations import CONFIGURATIONS, CWD
 from stats import AllStats, CummulativeStats, Stats
-from dataanalyzer import descriptive_analysis, test_hypotheses
 
-def run_all_analyses(number_of_runs,in_results):
+
+def run_all_analyses(number_of_runs):
     '''
     Runs all analyses for all SPLs and returns an AllStats object.
     '''
@@ -20,10 +19,6 @@ def run_all_analyses(number_of_runs,in_results):
         print "---------"
         stats = run_analysis(spl, strategy, command_line, number_of_runs)
         all_stats.append(stats)
-        print "Flushing data to replay"
-        replay.save(AllStats(all_stats), in_results)
-        #descriptive_analysis(AllStats(all_stats), path_placer=in_results)
-        test_hypotheses(AllStats(all_stats))
         print "===================================="
     return AllStats(all_stats)
 
@@ -143,11 +138,11 @@ def run_r_script(RESULTS_DIR,input_file):
         
         output_file=RESULTS_DIR+"/result.txt"
         
-        script_dir=os.getcwd()
+        script_dir=os.getcwd()+'/tools'
         command='Rscript'
         path2script=script_dir+'/factorial-design.R'
 
-        args=['-i',input_file,'-o',output_file,'-d','.','-v','false']
+        args=['-i',input_file,'-o',output_file,'-d',',','-v','false']
         # Build subprocess command
         cmd = [command, path2script]+args 
         print "Command ",cmd

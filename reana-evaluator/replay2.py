@@ -6,13 +6,11 @@ Module Replay
 Handles replay of previously gathered data.
 '''
 import json
-import csv
-
 from collections import defaultdict
 
 from stats import AllStats, CummulativeStats, Stats
+import csv
 from configurations import AVAILABLE_SPL
-
 def load(filename):
     '''
     Loads data for replay.
@@ -31,7 +29,6 @@ def save(all_stats, filename):
 
     :type all_stats: AllStats
     '''
-    
     raw_data = _dump_cummulative_stats(all_stats.data)
     with open(filename, 'w') as dest:
         dest.write(json.dumps(raw_data))
@@ -67,7 +64,8 @@ def _dump_single_stats(stats):
     '''
     Converts a Stats object to a dict.
     '''
-    return stats.__dict__
+    return stats.__dict_
+
 def generate_csv(all_stats, data_file):
     '''
     Generates a cvs file from replay
@@ -86,4 +84,4 @@ def generate_csv(all_stats, data_file):
                     
                     
                     f.writerow([AVAILABLE_SPL[spl].factor1_level,AVAILABLE_SPL[spl].factor2_level,strategy,spl, details.analysis_time, details.memory])
-    return data_file
+    return data_file                

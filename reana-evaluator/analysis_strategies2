@@ -1,0 +1,5 @@
+Feature-family-based,FEATURE_FAMILY,
+Feature-product-based,FEATURE_PRODUCT,
+Family-product-based,FAMILY_PRODUCT,
+Product-based,PRODUCT,
+Family-based,FAMILY,

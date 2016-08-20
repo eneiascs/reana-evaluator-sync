@@ -1,7 +1,8 @@
 # coding=utf-8
 
 import os.path
-from collections import namedtuple, OrderedDict
+
+from collections import namedtuple
 from itertools import product
 
 
@@ -18,18 +19,16 @@ CWD = '.'
 JAR = os.path.join(REANA_ROOT, "reana-spl.jar")
 REANA_MAIN = "java -Xss100m -jar "+JAR+" --all-configurations --suppress-report --stats --param-path="+PARAM_PATH
 
-ANALYSIS_STRATEGIES =OrderedDict()
-with open("analysis_strategies") as fp:
-     
-     for line in fp:
-        
-        if(len(line.split(",", 8))>=2):
-            ANALYSIS_STRATEGIES[line.split(",", 4)[0]]= line.split(",", 4)[1]
-              
+ANALYSIS_STRATEGIES = {
+        "Feature-family-based": "FEATURE_FAMILY",
+        "Feature-product-based": "FEATURE_PRODUCT",
+        "Product-based": "PRODUCT",
+        "Family-based": "FAMILY",
+        "Family-product-based": "FAMILY_PRODUCT"
+    }
+
 
 SPL = namedtuple("SPL", ["uml_model", "feature_model","factor1_name","factor1_level","factor2_name","factor2_level"])
-
-SPL_ORDER=[]
 AVAILABLE_SPL={}
 
 with open("available_spl") as fp:
@@ -37,12 +36,11 @@ with open("available_spl") as fp:
      
      
      for line in fp:
-        if(len(line.split(",", 8))>=8):
+        if(len(line.split(",", 8))==8):
             AVAILABLE_SPL[line.split(",", 8)[0]]=SPL(uml_model= line.split(",",8)[1], feature_model=line.split(",", 8)[2],factor1_name=line.split(",", 8)[3],factor1_level=line.split(",", 8)[4],factor2_name=line.split(",", 8)[5],factor2_level=line.split(",", 8)[6])
-            SPL_ORDER.append(line.split(",", 8)[0])
-        elif(len(line.split(",", 8))>=4):
+        else:
             AVAILABLE_SPL[line.split(",", 8)[0]]=SPL(uml_model= line.split(",",8)[1], feature_model=line.split(",", 8)[2],factor1_name='',factor1_level='',factor2_name='',factor2_level='')    
-            SPL_ORDER.append(line.split(",", 8)[0])    
+    
     
 #AVAILABLE_SPL = {
 #        "BSN": SPL(uml_model="BSN_models_without_File.xml",
@@ -78,10 +76,22 @@ def get_executable(strategy, spl):
             + get_arg_for_spl(spl))
 
 
-CONFIGURATIONS= OrderedDict()
-for strategy in ANALYSIS_STRATEGIES:
-    for spl in SPL_ORDER:
-        CONFIGURATIONS.update({(spl, strategy): get_executable(strategy, spl)})
+FEATURE_BASED = {(spl, strategy): get_executable(strategy, spl)
+        for strategy, spl in product(["Feature-family-based", "Feature-product-based"],
+                                     AVAILABLE_SPL)}
+#del FEATURE_BASED[("TankWar", "Feature-product-based")]
+
+PRODUCT_BASED = {(spl, "Product-based"): get_executable("Product-based", spl)
+        for spl in AVAILABLE_SPL.keys()}
+
+FAMILY_BASED = {(spl, strategy): get_executable(strategy, spl)
+        for strategy, spl in product(["Family-based", "Family-product-based"],
+                                    AVAILABLE_SPL)}
+
+CONFIGURATIONS = {}
+CONFIGURATIONS.update(FEATURE_BASED)
+CONFIGURATIONS.update(PRODUCT_BASED)
+CONFIGURATIONS.update(FAMILY_BASED)
 
 # These 3 take a long time to run (between 1.5 and 3.5 hours), so it is best
 #to run them separately and then merge the results in replay.json.
