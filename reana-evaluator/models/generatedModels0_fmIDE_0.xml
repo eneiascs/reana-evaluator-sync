@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and mandatory="true" name="R">
+				<feature name="o_1"/>
+				<feature name="o_2"/>
+				<feature name="o_3"/>
+				<feature name="o_4"/>
+				<or mandatory="true" name="Gi__5">
+					<feature mandatory="true" name="g_5_1"/>
+					<feature mandatory="true" name="g_5_2"/>
+				</or>
+				<or mandatory="true" name="Gi__6">
+					<feature mandatory="true" name="g_6_1"/>
+					<feature mandatory="true" name="g_6_2"/>
+				</or>
+				<feature name="o_7"/>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

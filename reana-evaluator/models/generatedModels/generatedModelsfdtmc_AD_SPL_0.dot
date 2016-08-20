@@ -1,0 +1,26 @@
+digraph graphname {
+AD_SPL_0_s0 [label="AD_SPL_0_s0",color=blue,shape=doublecircle ];
+AD_SPL_0_s1 [label="AD_SPL_0_s1",color=red,shape=doublecircle ];
+AD_SPL_0_s2 [label="AD_SPL_0_s2" ];
+AD_SPL_0_s3 [label="AD_SPL_0_s3" ];
+AD_SPL_0_s4 [label="AD_SPL_0_s4" ];
+AD_SPL_0_s5 [label="AD_SPL_0_s5" ];
+AD_SPL_0_s6 [label="AD_SPL_0_s6" ];
+AD_SPL_0_s7 [label="AD_SPL_0_s7" ];
+AD_SPL_0_s8 [label="AD_SPL_0_s8",color=green,shape=doublecircle ];
+AD_SPL_0_s0 -> AD_SPL_0_s2 [label=" / 1.0"];
+AD_SPL_0_s1 -> AD_SPL_0_s1 [label=" / 1.0", style=dotted];
+AD_SPL_0_s2 -> AD_SPL_0_s3 [label="Activity_0 / SD_0"];
+AD_SPL_0_s2 -> AD_SPL_0_s1 [label="Activity_0 / 1-SD_0", style=dotted];
+AD_SPL_0_s3 -> AD_SPL_0_s4 [label="Activity_1 / SD_1"];
+AD_SPL_0_s3 -> AD_SPL_0_s1 [label="Activity_1 / 1-SD_1", style=dotted];
+AD_SPL_0_s4 -> AD_SPL_0_s5 [label="Activity_2 / SD_2"];
+AD_SPL_0_s4 -> AD_SPL_0_s1 [label="Activity_2 / 1-SD_2", style=dotted];
+AD_SPL_0_s5 -> AD_SPL_0_s6 [label="Activity_3 / SD_3"];
+AD_SPL_0_s5 -> AD_SPL_0_s1 [label="Activity_3 / 1-SD_3", style=dotted];
+AD_SPL_0_s6 -> AD_SPL_0_s7 [label="Activity_4 / SD_4"];
+AD_SPL_0_s6 -> AD_SPL_0_s1 [label="Activity_4 / 1-SD_4", style=dotted];
+AD_SPL_0_s7 -> AD_SPL_0_s8 [label="Activity_5 / SD_5"];
+AD_SPL_0_s7 -> AD_SPL_0_s1 [label="Activity_5 / 1-SD_5", style=dotted];
+AD_SPL_0_s8 -> AD_SPL_0_s8 [label=" / 1.0"];
+}
