@@ -1,0 +1,298 @@
+[1] "2016-08-17 10:08:13 BRT"
+[1] "Script dir /home/eneias/reana-evaluator"
+[1] "Input file: /home/eneias/reana-evaluator/results-2016-08-17T10:00:59.091062/data.csv"
+[1] "Output results file: /home/eneias/reana-evaluator/results-2016-08-17T10:00:59.091062/result.txt"
+[1] "Decimal separator: ."
+[1] "Alpha: 0.01"
+[1] "Bartlett test memory F1"
+
+	Bartlett test of homogeneity of variances
+
+data:  smp$memory by smp[, 1]
+Bartlett's K-squared = 0.56946, df = 1, p-value = 0.4505
+
+[1] "Bartlett test memory F2"
+
+	Bartlett test of homogeneity of variances
+
+data:  smp$memory by smp[, 2]
+Bartlett's K-squared = 0.54848, df = 1, p-value = 0.4589
+
+[1] "Bartlett test memory F3"
+
+	Bartlett test of homogeneity of variances
+
+data:  smp$memory by smp[, 3]
+Bartlett's K-squared = 53.437, df = 4, p-value = 6.903e-11
+
+[1] "Bartlett test time F1"
+
+	Bartlett test of homogeneity of variances
+
+data:  smp$time by smp[, 1]
+Bartlett's K-squared = 17.742, df = 1, p-value = 2.53e-05
+
+[1] "Bartlett test time F2"
+
+	Bartlett test of homogeneity of variances
+
+data:  smp$time by smp[, 2]
+Bartlett's K-squared = 17.562, df = 1, p-value = 2.781e-05
+
+[1] "Bartlett test time F3"
+
+	Bartlett test of homogeneity of variances
+
+data:  smp$time by smp[, 3]
+Bartlett's K-squared = 168.92, df = 4, p-value < 2.2e-16
+
+[1] "Factorial design 2x2x5"
+[1] "Three-way with trimmed means for memory"
+[1] "Group Levels:"
+      [,1] [,2] [,3]
+ [1,]    1    1    1
+ [2,]    1    1    2
+ [3,]    1    1    3
+ [4,]    1    1    4
+ [5,]    1    1    5
+ [6,]    1    2    1
+ [7,]    1    2    2
+ [8,]    1    2    3
+ [9,]    1    2    4
+[10,]    1    2    5
+[11,]    2    1    1
+[12,]    2    1    2
+[13,]    2    1    3
+[14,]    2    1    4
+[15,]    2    1    5
+[16,]    2    2    1
+[17,]    2    2    2
+[18,]    2    2    3
+[19,]    2    2    4
+[20,]    2    2    5
+$Qa
+[1] 138.7076
+
+$Qa.crit
+[1] 4.689591
+
+$A.p.value
+[1] 1e-04
+
+$Qb
+[1] 151.5594
+
+$Qb.crit
+[1] 4.689591
+
+$B.p.value
+[1] 1e-04
+
+$Qc
+[1] 5599.873
+
+$Qc.crit
+[1] 41.60553
+
+$C.p.value
+[1] 0.001
+
+$Qab
+[1] 2937.416
+
+$Qab.crit
+[1] 16.66763
+
+$AB.p.value
+[1] 0.001
+
+$Qac
+[1] 436.0587
+
+$Qac.crit
+[1] 41.60553
+
+$AC.p.value
+[1] 0.001
+
+$Qbc
+[1] 432.6304
+
+$Qbc.crit
+[1] 41.60553
+
+$BC.p.value
+[1] 0.001
+
+$Qabc
+[1] 4120.907
+
+$Qabc.crit
+[1] 41.60553
+
+$ABC.p.value
+[1] 0.001
+
+[1] "A.p.value: 1e-04 TRUE"
+[1] "B.p.value: 1e-04 TRUE"
+[1] "C.p.value: 0.001 TRUE"
+[1] "AB.p.value: 0.001 TRUE"
+[1] "AC.p.value: 0.001 TRUE"
+[1] "BC.p.value: 0.001 TRUE"
+[1] "ABC.p.value: 0.001 TRUE"
+[1] "Three-way with trimmed means for time"
+[1] "Group Levels:"
+      [,1] [,2] [,3]
+ [1,]    1    1    1
+ [2,]    1    1    2
+ [3,]    1    1    3
+ [4,]    1    1    4
+ [5,]    1    1    5
+ [6,]    1    2    1
+ [7,]    1    2    2
+ [8,]    1    2    3
+ [9,]    1    2    4
+[10,]    1    2    5
+[11,]    2    1    1
+[12,]    2    1    2
+[13,]    2    1    3
+[14,]    2    1    4
+[15,]    2    1    5
+[16,]    2    2    1
+[17,]    2    2    2
+[18,]    2    2    3
+[19,]    2    2    4
+[20,]    2    2    5
+$Qa
+[1] 428.2197
+
+$Qa.crit
+[1] 7.264375
+
+$A.p.value
+[1] 1e-04
+
+$Qb
+[1] 448.6383
+
+$Qb.crit
+[1] 7.264375
+
+$B.p.value
+[1] 1e-04
+
+$Qc
+[1] 21695.33
+
+$Qc.crit
+[1] 52.92384
+
+$C.p.value
+[1] 0.001
+
+$Qab
+[1] 1412.26
+
+$Qab.crit
+[1] 34.39705
+
+$AB.p.value
+[1] 0.001
+
+$Qac
+[1] 15539.59
+
+$Qac.crit
+[1] 52.92384
+
+$AC.p.value
+[1] 0.001
+
+$Qbc
+[1] 15739.12
+
+$Qbc.crit
+[1] 52.92384
+
+$BC.p.value
+[1] 0.001
+
+$Qabc
+[1] 17384.91
+
+$Qabc.crit
+[1] 52.92384
+
+$ABC.p.value
+[1] 0.001
+
+[1] "A.p.value: 1e-04 TRUE"
+[1] "B.p.value: 1e-04 TRUE"
+[1] "C.p.value: 0.001 TRUE"
+[1] "AB.p.value: 0.001 TRUE"
+[1] "AC.p.value: 0.001 TRUE"
+[1] "BC.p.value: 0.001 TRUE"
+[1] "ABC.p.value: 0.001 TRUE"
+$Qa
+[1] 428.2197
+
+$Qa.crit
+[1] 7.264375
+
+$A.p.value
+[1] 1e-04
+
+$Qb
+[1] 448.6383
+
+$Qb.crit
+[1] 7.264375
+
+$B.p.value
+[1] 1e-04
+
+$Qc
+[1] 21695.33
+
+$Qc.crit
+[1] 52.92384
+
+$C.p.value
+[1] 0.001
+
+$Qab
+[1] 1412.26
+
+$Qab.crit
+[1] 34.39705
+
+$AB.p.value
+[1] 0.001
+
+$Qac
+[1] 15539.59
+
+$Qac.crit
+[1] 52.92384
+
+$AC.p.value
+[1] 0.001
+
+$Qbc
+[1] 15739.12
+
+$Qbc.crit
+[1] 52.92384
+
+$BC.p.value
+[1] 0.001
+
+$Qabc
+[1] 17384.91
+
+$Qabc.crit
+[1] 52.92384
+
+$ABC.p.value
+[1] 0.001
+

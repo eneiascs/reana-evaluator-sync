@@ -1,0 +1,7 @@
+[1] "2016-08-17 09:50:52 BRT"
+[1] "Script dir /home/eneias/reana-evaluator"
+[1] "Input file: /home/eneias/reana-evaluator/results-2016-08-17T09:49:03.845746/data.csv"
+[1] "Output results file: /home/eneias/reana-evaluator/results-2016-08-17T09:49:03.845746/result.txt"
+[1] "Decimal separator: ,"
+[1] "Alpha: 0.01"
+[1] "Bartlett test memory F1"

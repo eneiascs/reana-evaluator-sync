@@ -1,0 +1,11 @@
+,,strategy,spl,time,memory
+,,Feature-family-based,BSN,137,134.27734375
+,,Feature-product-based,BSN,1157,317.4921875
+,,Product-based,BSN,6460,611.87109375
+,,Family-based,BSN,23865,387.08984375
+,,Family-product-based,BSN,23526,496.51171875
+,,Feature-family-based,Email,118,136.9296875
+,,Feature-product-based,Email,327,171.6640625
+,,Product-based,Email,1245,182.5234375
+,,Family-based,Email,645,142.94921875
+,,Family-product-based,Email,503,190.24609375

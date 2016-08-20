@@ -1,0 +1,4 @@
+BSN,BSN_models_without_File.xml,BSN-FM_without_file.txt,activities,11,decision_nodes,21,
+Email,Email.xml,email-FM.txt,activities,11,decision_nodes,22,
+Email2,Email.xml,email-FM.txt,activities,12,decision_nodes,21,
+Lift,LiftSystem.xml,CNF_LiftSystem.txt,activities,12,decision_nodes,22,
